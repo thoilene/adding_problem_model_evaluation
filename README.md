@@ -26,15 +26,15 @@ in [0,1]. At every time step, the input consists of a random signal and a mask s
 signal has a value of zero at all time steps except for two steps when it has values of 1 to indicate
 which two numbers should be added. An example of the adding problem is shown in figure 1 below.
 
-![image info](adding_sequence.JPG)
+![image info](pics/adding_sequence.JPG)
 
 The model is very simple: simple reccurent neural network with 100 units, relu activation and reccurent initializer.
 
-![image info](Model1.JPG)
+![image info](pics/Model1.JPG)
 
 Here is the model summary and a view of the model architecture.
 
-![image info](Model.JPG)
+![image info](pics/Model.JPG)
 
 Default features of the model are the following:  
 
@@ -95,7 +95,7 @@ It is shown in Examples.ipynb how to use the functionalities of the package.
 
 ### Results of model evaluation with default parametrization
 
-![image info](Model_Eval_NP.JPG)
+![image info](pics/Model_Eval_NP.JPG)
 
 For low sequence length up to 50 the model works very good with default parameters. For sequence length from 60 upwards the does not really learn with increasing learning steps. Even between steps 40 and 60 where the mean squared error is below 0.10 the model tends to overfit as the validation set mean squared error is far lower. Hence the model with default parametrization is inappropriate for sequence length from 60 and above.
 
@@ -104,13 +104,13 @@ From the starting point let's check whether better performance could be achieved
 ### Results of model evaluation with sequence length dependent selected learning rate
 
 In order to selected an appropriate learning rate for the model given a list of sequence lengths [50, 60, 70, 80, 90, 100] let's plot the performance metric mean squared error with regard of learning rate.
-![image info](Learning_rate_plot.JPG)
+![image info](pics/Learning_rate_plot.JPG)
 
 Learning rate 1.e-3 appears to be the most appropriate value for all 6 sequence lengths above.
 
 Running the model with learning rate 1.e-3 shows a convergence of all models. But real improvement is shown for the model with sequence length 60. For the model with sequence length 70 or 80 there is no real learning effect with increasing learning step. The performance metric mean squared error for the model with sequence length 70 is arround 0.1652 from learning step 2 until step 100. Similar behavior is observable for the model with sequence length 80 with performance metric mean squared error around 0.1665.
 
-![image info](Model_Eval_LR0001_2.JPG)
+![image info](pics/Model_Eval_LR0001_2.JPG)
 
 In order to achieve high performance of the model for sequence length from 70 or above, this work provides a parameter tuning functionality with bayesian optimization. 
 
@@ -121,11 +121,11 @@ For sequence length above 70 the model performs well slightly below mean squared
 For ***sequence length 70*** the best parameter set is ***{'clipnorm':70.81, 'learning_rate':0.0003038, 'momentum': 0.9602}***.
 A very high performance is achieved as shown on the picture right below.
 
-![image info](tuning_params_70_2.JPG)
+![image info](pics/tuning_params_70_2.JPG)
 
 For long sequences, example of ***sequence length 150*** the best parameter set is ***{'clipnorm': 33.63305523122102, 'learning_rate': 0.0006754620538432753, 'momentum': 0.8697291008067327}***. The model is truly struggling for those long sequences. A very high performance is achieved between learning steps 35 and 100 as shown on the picture right below.
 
-![image info](tuning_params_150_2.JPG)
+![image info](pics/tuning_params_150_2.JPG)
 
 
 ## Results summary
@@ -134,9 +134,8 @@ The model performs very well with the right learning rate for short to mid-lengt
 
 With hyper parameter tuning the model performs very well even for long sequences (at least up to 150).
 
-![image info](recapitulation.JPG)
-![image info](summary.JPG)
+![image info](pics/recapitulation.JPG)
+![image info](pics/summary.JPG)
 
 
     
-
