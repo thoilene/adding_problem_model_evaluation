@@ -79,15 +79,15 @@ In order to use this package you need to have following packages installed:
 
 ## Installation
 
-The package ***adding_problem_model_evaluation*** is publicly accessible on pypi.
+The package ***adp-model-evaluation*** is publicly accessible on pypi.
 
 To install the package you need to run following command:
 
-***pip instal adding_problem_model_evaluation***
+***pip install adp-model-evaluation***
 
 ### Utilization of model evaluation solution
 
-It is shown in Examples.ipynb how to use the functionalities of the package.
+It is shown in [Examples.ipynb](https://github.com/thoilene/adding_problem_model_evaluation/blob/main/Examples.ipynb) how to use the functionalities of the package.
 
 ## Results of Model Evaluation
 
@@ -137,5 +137,6 @@ With hyper parameter tuning the model performs very well even for long sequences
 ![image info](pics/recapitulation.JPG)
 ![image info](pics/summary.JPG)
 
+Model overfitting is not observed in the four final models which have been evaluated as the mean squared error performance on train set is quite close to the performance on validation set.
 
     
